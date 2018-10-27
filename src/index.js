@@ -109,7 +109,14 @@ function map(array, fn) {
  Напишите аналог встроенного метода reduce для работы с массивами
  */
 function reduce(array, fn, initial) {
-    
+    var n = initial || array[0],
+        m = initial ? 0 : 1;
+
+    for (; m < array.length; m++) {
+        n = fn(n, array[m], m, array);
+    }
+
+    return n;
 }
 
 /*
