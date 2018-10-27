@@ -86,7 +86,7 @@ function bindFunction(Fn) {
  Напишите аналог встроенного метода forEach для работы с массивами
  */
 function forEach(array, fn) {
-    for (n = 0; n < array.length; n ++)
+    for (var n = 0; n < array.length; n++)
     {
         fn(array[n], n, array);
     }
@@ -97,6 +97,11 @@ function forEach(array, fn) {
  Напишите аналог встроенного метода map для работы с массивами
  */
 function map(array, fn) {
+    var my_array = [];
+    for (var n = 0; n < array.length; n++) {
+        my_array[n] = fn(array[n], n, array);
+    }
+    return my_array;
 }
 
 /*
