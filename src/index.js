@@ -181,24 +181,24 @@ function slice(array, from, to) {
  Зарпещено использовать встроенные методы для работы с массивами
  */
 function isAllTrue(array, fn) {
-    var x = 0;
-    var y = 0;
+    var a = 0;
+    var b = 0;
 
     if (( array == 0 ) || (array.length <= 0)) {
         throw new Error("empty array");
     } else if (typeof fn != 'function') {
         throw new Error("fn is not a function");
     } else {
-        for (var i = 0; i < array.length; i++) {
-            var z = fn(array[i]);
-            if (z == false) {
-                y++;
-            } else if (z == true) {
-                x++;
+        for (var n = 0; n < array.length; n++) {
+            var c = fn(array[n]);
+            if (c == false) {
+                b++;
+            } else if (c == true) {
+                a++;
             }
-            if (array.length == x) {
+            if (array.length == a) {
                 return true;
-            } else if (y > 0) {
+            } else if (b > 0) {
                 return false;
             }
         }
@@ -215,6 +215,28 @@ function isAllTrue(array, fn) {
  Зарпещено использовать встроенные методы для работы с массивами
  */
 function isSomeTrue(array, fn) {
+    var a = 0;
+
+    if (( array == 0 ) || (array.length <= 0)) {
+        throw new Error("empty array");
+    } else if (typeof fn != 'function') {
+        throw new Error("fn is not a function");
+    } else {
+
+        for (var n = 0; n < array.length; n++) {
+            var b = fn(array[n]);
+            if (b == true) {
+                a++;
+            }
+        }
+
+        if (a < 1) {
+            return false;
+        } else (a >= 1)
+        {
+            return true;
+        }
+    }
 }
 
 /*
