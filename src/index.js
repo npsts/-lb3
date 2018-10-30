@@ -181,6 +181,28 @@ function slice(array, from, to) {
  Зарпещено использовать встроенные методы для работы с массивами
  */
 function isAllTrue(array, fn) {
+    var x = 0;
+    var y = 0;
+
+    if (( array == 0 ) || (array.length <= 0)) {
+        throw new Error("empty array");
+    } else if (typeof fn != 'function') {
+        throw new Error("fn is not a function");
+    } else {
+        for (var i = 0; i < array.length; i++) {
+            var z = fn(array[i]);
+            if (z == false) {
+                y++;
+            } else if (z == true) {
+                x++;
+            }
+            if (array.length == x) {
+                return true;
+            } else if (y > 0) {
+                return false;
+            }
+        }
+    }
 }
 
 /*
