@@ -26,12 +26,11 @@ function defaultParameterValue(a, b=100) {
  Количество переданных аргументов заранее неизвестно
  */
 function returnArgumentsArray() {
-    var massiv = [];
-    for (n = 0; n < arguments.length; n ++)
-    {
-        massiv[n] = arguments[n]; 
-    }
-    return massiv; 
+    var result = [];
+for (var i = 0; i < arguments.length; i++) {
+    result[i] = arguments[i];
+}
+return result;
 }
 
 /*
@@ -49,19 +48,10 @@ function returnFnResult(fn) {
  Функция должна принимать число (значение по умолчанию - 0) и возвращать функцию (F)
  При вызове F, переданное число должно быть увеличено на единицу и возвращено из F
  */
-function returnCounter(number=0) {
-    return function F()
-    {
-        ++number;
+function returnCounter(x=0) {
+    return function F() {
+        return ++x;
     }
-    /*
-    fn F = number;
-    for (n=0; n++)
-    {
-        number = n + 1;
-    }
-    return  F;
-    */
 }
 
 /*
