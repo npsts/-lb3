@@ -191,7 +191,7 @@ function isAllTrue(array, fn) {
     } else {
         for (var n = 0; n < array.length; n++) {
             var c = fn(array[n]);
-            if (c == false) {
+            /*if (c == false) {
                 b++;
             } else if (c == true) {
                 a++;
@@ -200,6 +200,18 @@ function isAllTrue(array, fn) {
                 return true;
             } else if (b > 0) {
                 return false;
+            } 
+            */
+            if (c == false) {
+            b++; 
+            } else {
+            a++;
+            }
+            
+            if (array.length == a) {
+            return true;
+            } else if (b > 0) {
+            return false;
             }
         }
     }
