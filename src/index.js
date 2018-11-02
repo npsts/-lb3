@@ -207,7 +207,7 @@ function isAllTrue(array, fn) {
             } else {
             a++;
             }
-            
+
             if (array.length == a) {
             return true;
             } else if (b > 0) {
@@ -237,11 +237,11 @@ function isSomeTrue(array, fn) {
 
         for (var n = 0; n < array.length; n++) {
             var b = fn(array[n]);
-            if (b == true) {
+            if (/* b */ n == true) {
                 a++;
             }
         }
-
+        
         if (a < 1) {
             return false;
         } else (a >= 1)
